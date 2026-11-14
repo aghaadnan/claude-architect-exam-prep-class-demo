@@ -1,0 +1,17 @@
+# Markdown-only repo: ignore everything by default
+*
+
+# Re-allow directories so git can look inside them
+!*/
+
+# Allow markdown files
+!*.md
+
+# Allowed non-markdown exceptions
+!.gitignore
+!.claude/settings.json
+!.githooks/pre-commit
+!.github/workflows/markdown-only.yml
+
+# Private folder, never commit (must stay below the rules above)
+config/

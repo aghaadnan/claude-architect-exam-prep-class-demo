@@ -1,0 +1,16 @@
+#!/bin/sh
+# Block commits that contain non-markdown files (except the allowed exceptions).
+
+ALLOWED='^(\.gitignore|\.claude/settings\.json|\.githooks/pre-commit|\.github/workflows/markdown-only\.yml)$'
+
+# Files being added/changed in this commit (deletions are always fine)
+bad=$(git diff --cached --name-only --diff-filter=ACMR \
+  | grep -v -E '\.md$' \
+  | grep -v -E "$ALLOWED")
+
+if [ -n "$bad" ]; then
+  echo "Commit blocked: this repo allows only .md files."
+  echo "Offending files:"
+  echo "$bad" | sed 's/^/  - /'
+  exit 1
+fi
