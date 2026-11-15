@@ -6,4 +6,4 @@ All content in this repository is written in Markdown.
 
 ## Contents
 
-_Notes will be added here as they are written._
+- [CI Notes](ci-notes.md): `gh` CLI, CI concepts, Claude as a CI worker (demo and configuration)
