@@ -15,7 +15,7 @@ jobs:
         run: |
           bad=$(git ls-files \
             | grep -v -E '\.md$' \
-            | grep -v -E '^(\.gitignore|\.claude/settings\.json|\.githooks/pre-commit|\.github/workflows/markdown-only\.yml)$' || true)
+            | grep -v -E '^(\.gitignore|\.claude/settings\.json|\.githooks/pre-commit|\.github/workflows/(markdown-only|claude|claude-code-review)\.yml)$' || true)
           if [ -n "$bad" ]; then
             echo "Non-markdown files found:"
             echo "$bad"

@@ -12,6 +12,8 @@
 !.claude/settings.json
 !.githooks/pre-commit
 !.github/workflows/markdown-only.yml
+!.github/workflows/claude.yml
+!.github/workflows/claude-code-review.yml
 
 # Private folder, never commit (must stay below the rules above)
 config/
