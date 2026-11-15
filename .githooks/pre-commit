@@ -1,7 +1,7 @@
 #!/bin/sh
 # Block commits that contain non-markdown files (except the allowed exceptions).
 
-ALLOWED='^(\.gitignore|\.claude/settings\.json|\.githooks/pre-commit|\.github/workflows/markdown-only\.yml)$'
+ALLOWED='^(\.gitignore|\.claude/settings\.json|\.githooks/pre-commit|\.github/workflows/(markdown-only|claude|claude-code-review)\.yml)$'
 
 # Files being added/changed in this commit (deletions are always fine)
 bad=$(git diff --cached --name-only --diff-filter=ACMR \
